@@ -1,4 +1,5 @@
 #!/usr/bin/env nodejs
+
 var express = require('express');
 var app = express();
 var http = require('http').Server(app);
@@ -11,8 +12,7 @@ var expressIp = require('express-ip');
 const ORGANIZATION = process.env.ORGANIZATION;
 const TOKEN = process.env.TOKEN;
 
-var PORT = 8000 || process.env.PORT;
-
+var PORT = process.env.PORT;
 
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -20,22 +20,22 @@ app.use(expressIp().getIpInfoMiddleware);
 
 app.set('PORT', PORT);
 
-app.get('/', function(req, res) {
+app.get('/', function (req, res) {
     res.sendFile(__dirname + '/index.html');
     const userInfo = req.ipInfo;
     console.log('User connected from %s, %s', userInfo.city, userInfo.country);
     console.log('User details = %o', userInfo);
 });
 
-app.get('/input_data', function(req,res) {
-     res.sendFile(__dirname + '/index.html');
+app.get('/input_data', function (req, res) {
+    res.sendFile(__dirname + '/index.html');
 });
 var client = Octokit({
     auth: TOKEN
 });
 
-app.post('/input_data',(req,res) => {
-    if(req.body.handle === '') res.redirect('back');
+app.post('/input_data', (req, res) => {
+    if (req.body.handle === '') res.redirect('back');
     client.users
         .getByUsername({
             username: req.body.handle
@@ -55,7 +55,7 @@ app.post('/input_data',(req,res) => {
                     console.log('Invitation failed %o', error)
                     res.redirect('back')
                 })
-	    console.log(userdata)
+            console.log(userdata)
         })
         .catch((error) => {
             console.log('User not found %o', error)
@@ -63,6 +63,6 @@ app.post('/input_data',(req,res) => {
         });
 });
 
-http.listen(app.get('PORT'),function(){
+http.listen(app.get('PORT'), function () {
     console.log('listening on : %s', app.get('PORT'));
 });
