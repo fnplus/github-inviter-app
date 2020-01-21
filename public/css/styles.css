@@ -1,0 +1,96 @@
+html, body {
+	height: 100vh;
+	overflow: auto;
+	background-color: #212121;
+}
+
+body {
+	font-family: "Montserrat";
+	font-weight: lighter;
+}
+
+@font-face {
+	font-family: "profontwindows";
+	src: url('../assets/fonts/ProFontWindows/ProFontWindows.ttf');
+}
+
+.info-box {
+	margin-top: 15%;
+	color: white;
+	font-size: 1.4em;
+}
+
+.codezoned {
+	font-size: 120%;
+	font-family: "Montserrat";
+}
+
+.form-div {
+	height: 32.5%;
+	margin: auto auto;
+	margin-top: 2.5%;
+	width: 50%;
+	text-align: center;
+}
+
+@media(max-width: 750px) {
+	.nav-wrapper {
+		text-align: center !important;
+	}
+	.info-box {
+		margin-top: 15% color: white;
+		font-size: 1.4em;
+	}
+	.form-div {
+		width: 80%;
+		height: 50%;
+		margin: auto auto;
+		margin-top: 5%;
+		text-align: center;
+	}
+}
+
+/* label color */
+.input-field label {
+	color: #e0e0e0;
+}
+
+/* label focus color */
+.input-field input[type=text]:focus+label {
+	color: #e0e0e0 !important;
+}
+
+/* label underline focus color */
+.input-field input[type=text]:focus {
+	border-bottom: 1px solid #e0e0e0 !important;
+	box-shadow: 0 1px 0 0 #e0e0e0 !important;
+}
+
+.input-field input[type=email]:focus+label {
+	color: #e0e0e0 !important;
+}
+
+/* label underline focus color */
+.input-field input[type=email]:focus {
+	border-bottom: 1px solid #e0e0e0 !important;
+	box-shadow: 0 1px 0 0 #e0e0e0 !important;
+}
+
+.material-icons {
+	color: #e0e0e0 !important;
+}
+
+.material-icons:focus {
+	color: #029843 !important;
+}
+
+.material-icons:hover {
+	color: #029843 !important;
+}
+
+.btn {
+	background-color: #e0e0e0;
+	color: #212121;
+	font-size: 1em;
+	font-weight: 500;
+}

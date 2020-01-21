@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="alternate" href="https://fnplus.tech" hreflang="en-us" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Welcome to Fnplus! 😃</title>
+	<meta name="description"
+		content="We are a personalised, community-driven learning experience platform for in-demand technical and 21st-century skills." />
+
+	<!-- Tags for rich preview -->
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="Your Personal Growth Story Starts Here | Fn+Geeks" />
+	<meta property="og:description"
+		content="We are a personalised, community-driven learning experience platform for in-demand technical and 21st-century skills." />
+	<meta property="og:url" content="https://fnplus.tech" />
+	<meta property="og:image" content="/icons/android-chrome-384x384.png" />
+	<link rel="shortcut icon" href="/icons/favicon.ico" type="image/x-icon" />
+
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+	<link rel="manifest" href="/icons/site.webmanifest">
+
+	<link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#5bbad5">
+	<link rel="shortcut icon" href="/icons/favicon.ico" id="normal-scheme-icon">
+	<link rel="shortcut icon" href="/icons/faviconLight.ico" id="light-scheme-icon">
+	<link rel="shortcut icon" href="/icons/faviconDark.ico" id="dark-scheme-icon">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="msapplication-config" content="/icons/browserconfig.xml">
+	<meta name="theme-color" content="#ffffff">
+
+	<!--Import Google Icon Font-->
+	<link href="https://fonts.googleapis.com/icon?family=Montserrat:400,500,700" rel="stylesheet">
+	<!-- Compiled jquery -->
+	<script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/styles.css" />
+	<link rel="stylesheet" type="text/css" href="assets/materialize.css">
+	<script type="text/javascript" src="assets/materialize.js"></script>
+</head>
+
+<body>
+
+	<nav style="position: absolute; background-color: #222222;">
+		<div class="nav-wrapper">
+			<a href="http://www.fnplus.tech" class="brand-logo"><img src="assets/icons/faviconDark.ico"
+					style="width: 12%; min-width: 48px; margin:12px"></a>
+		</div>
+	</nav><br><br><br>
+
+	<div class="container info-box" style="margin-top: 5%;">
+		<div class="row" style="text-align: left; color: #e0e0e0;">
+			<div class="col s12" style="text-align: center;">Hey there, thanks for your interest in <span
+					class="codezoned" style="color: white;">Fnplus</span></div>
+			<div class="col s12" style="text-align: center; margin-bottom: 2%;">We need you to do a couple of things to
+				get you in as an actual member :)</div>
+			<div class="col s4" style="text-align: right;">Step <span style="color: #029843; font-weight: 750">1</span>:
+			</div>
+			<div class="col s8" style="text-align: left;">Fill up this <a href="http://bit.ly/fnplusnow" target="_blank"
+					style="color: #029843;"> Membership form</a></div>
+			<div class="col s4"></div>
+			<div class="col s8" style="text-align: left; margin-bottom: 1.5%; font-size: 16px;">Your details would
+				really help us to connect and talk to you in future. They're safe with us tho 🤐</div><br>
+			<div class="col s4" style="text-align: right;">Step <span style="color: #029843; font-weight: 750">2</span>:
+			</div>
+			<div class="col s8" style="text-align: left;">Join our <a href="https://t.me/joinchat/GOTUA1BifJR4WQa5K66tvQ" target="_blank"
+					style="color: #029843;">Telegram</a></div><br><br>
+			<!-- <div class="col s3"></div> -->
+			<div class="col s12"
+				style=" margin-bottom: 1%; color: #bdbdbd; margin-top: 2%; font-size: 1.1em; text-align: center;">Great!
+				Thanks for going through this with us. Now, we'd like to invite you to our Github organization. Go on
+				and enter your Github handle and Github email. You can expect an invitation soon! 😃</div> <br>
+		</div>
+	</div>
+
+	<div class="form-div" style="margin-top: 2%; margin-bottom: 1.5%;">
+
+		<form action="input_data" method="post" class="col s12">
+
+			<div class="row">
+				<div class="input-field col s12" style="margin-bottom: -2%;">
+					<input id="email" type="email" name="email" class="validate" required style="color: #e0e0e0;">
+					<label for="email">Github Email</label>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="input-field col s12">
+					<input id="handle" type="text" name="handle" class="validate" required style="color: #e0e0e0;">
+					<label for="handle">Github Handle</label>
+				</div>
+			</div>
+
+			<button class="btn waves-effect waves-light" type="submit" name="action">Submit</button>
+
+		</form>
+
+	</div>
+
+
+	<!-- Form Validation -->
+	<script>
+		$(document).ready(function () {
+			function validateEmail(sEmail) {
+				var filter = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+				if (filter.test(sEmail)) {
+					return true;
+				}
+				else {
+					return false;
+				}
+			}
+
+			$(function () {
+				$('#email').hover(function () {
+					$('#icon1').css('color', '#029843');
+				}, function () {
+					// on mouseout, reset the background colour
+					$('#icon1').css('color', '#e0e0e0;');
+				});
+			});
+
+			$(function () {
+				$('#handle').hover(function () {
+					$('#icon2').css('color', '#029843');
+				}, function () {
+					// on mouseout, reset the background colour
+					$('#icon2').css('color', '#e0e0e0;');
+				});
+			});
+
+			$('#join-form').submit(function (e) {
+				e.preventDefault();
+				var email = $('#email').val();
+				var handle = $('#handle').val();
+
+				if ($.trim(email).length == 0) {
+					alert('Please enter valid email address.');
+					e.preventDefault();
+				}
+				if (validateEmail(email)) {
+					//alert('Email is valid');
+				}
+				else {
+					alert('Invalid Email Address');
+					e.preventDefault();
+				}
+
+				if (handle.length < 1) {
+					alert("Enter a Valid Github Handle")
+				}
+			});
+		});
+	</script>
+
+</body>
+
+</html>
