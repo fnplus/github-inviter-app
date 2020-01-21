@@ -2,6 +2,9 @@
   "name": "github-organization-inviter",
   "version": "1.0.0",
   "description": "**Automate the addition of users to your organization** by hosting a web-app to allow people to click and recieve invitation to your Github Organization.",
+  "engines": {
+    "node": "12.13.0"
+  },
   "main": "main.js",
   "dependencies": {
     "@octokit/rest": "^16.37.0",
