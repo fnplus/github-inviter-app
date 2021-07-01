@@ -3,7 +3,7 @@
 var express = require('express');
 var app = express();
 var http = require('http').Server(app);
-const Octokit = require('@octokit/rest');
+const { Octokit } = require("@octokit/rest");
 var bodyParser = require('body-parser');
 var expressIp = require('express-ip');
 
@@ -30,7 +30,7 @@ app.get('/', function (req, res) {
 app.get('/input_data', function (req, res) {
     res.sendFile(__dirname + '/index.html');
 });
-var client = Octokit({
+var client = new Octokit({
     auth: TOKEN
 });
 
